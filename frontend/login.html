@@ -3,18 +3,13 @@
     <head>
         <link rel="stylesheet" href="css/login.css">
         <script type="text/javascript" src="js/login.js"></script>
-        <style>
-            body {
-                background-image: url("img/bg.jpg");
-            }
-        </style>
     </head>
     <body>
         <div class="login-page">
             <form class="form">
               <input id="email" type="text" placeholder="email address"/>
               <input id="password" type="password" placeholder="password"/>
-              <button onclick="validateData()">login</button>
+              <button onclick="return validateData()">login</button>
               <p class="message">Not registered? <a href="register.html">Create an account</a></p>
             </form>
         </div>

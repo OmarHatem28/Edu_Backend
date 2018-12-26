@@ -1,8 +1,8 @@
 function validateData()                                    
 { 
-    var name = document.getElementById("userName").value;             
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value; 
+    var name = document.getElementById("userName");             
+    var email = document.getElementById("email");
+    var password = document.getElementById("password"); 
     
     if (name.value == "")                                  
     { 
@@ -11,8 +11,8 @@ function validateData()
         return false; 
     } 
    
-    if (email.value == "" || email.value.indexOf("@", 0) != 1 || email.value.indexOf(".", 0) != 1)                                   
-    { 
+    if (email.value == "" || (email.value.match(/@/g) || []).length != 1 || (email.value.match(/\./g) || []).length != 1)
+    {
         window.alert("Please enter a valid e-mail address."); 
         email.focus(); 
         return false; 
@@ -22,8 +22,14 @@ function validateData()
     { 
         window.alert("Please enter your password"); 
         password.focus(); 
-        return flase; 
-    } 
+        return false; 
+    }
+    
+    var newUser = {
+        "name": name.value,
+        "email": email.value,
+        "password": password.value
+    };
     
     return true; 
 }

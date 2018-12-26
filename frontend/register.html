@@ -3,11 +3,6 @@
     <head>
         <link rel="stylesheet" href="css/register.css">
         <script type="text/javascript" src="js/register.js"></script>
-        <style>
-            body {
-                background-image: url("img/bg.jpg");
-            }
-        </style>
     </head>
     <body>
         <div class="register-page">
@@ -15,8 +10,8 @@
                 <input id="userName" type="text" placeholder="user name"/>
                 <input id="email" type="text" placeholder="email address"/>
                 <input id="password" type="password" placeholder="password"/>
-                <button onclick="validateData()">Sign up as teacher</button>
-                <button onclick="validateData()">Sign up as student</button>
+                <button onclick="return validateData()">Sign up as teacher</button>
+                <button onclick="return validateData()">Sign up as student</button>
                 <p class="message">Already registered? <a href="login.html">Sign In</a></p>
             </form>
         </div>
