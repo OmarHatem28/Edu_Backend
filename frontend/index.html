@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>WebUni - Education Template</title>
+	<title>EduCore - Free Online Courses</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="WebUni Education Template">
-	<meta name="keywords" content="webuni, education, creative, html">
+	<meta name="description" content="EduCore Free Online Courses">
+	<meta name="keywords" content="EduCore, education, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
 	<link href="img/favicon.ico" rel="shortcut icon"/>
@@ -37,21 +37,18 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-3">
 					<div class="site-logo">
-						<img src="img/logo.png" alt="">
+						<p style="color:#d82a4e; font-size: 50px;">EduCore</p>
 					</div>
 					<div class="nav-switch">
 						<i class="fa fa-bars"></i>
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="" class="site-btn header-btn">Login</a>
+					<a href="#signup" class="site-btn header-btn">Sign Up</a>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="#">About us</a></li>
 							<li><a href="courses.html">Courses</a></li>
-							<li><a href="blog.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -61,7 +58,7 @@
 	<!-- Header section end -->
 
 
-	<!-- Hero section -->
+	<!-- Login section -->
 	<section class="hero-section set-bg" data-setbg="img/bg.jpg">
 		<div class="container">
 			<div class="hero-text text-white">
@@ -71,15 +68,16 @@
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<form class="intro-newslatter">
-						<input type="text" placeholder="Name">
-						<input type="text" class="last-s" placeholder="E-mail">
-						<button class="site-btn">Sign Up Now</button>
+						<input type="text" placeholder="E-mail">
+						<input type="password" style="width: 300px; height: 55px; padding-inline-start: 20px" placeholder="Password">
+						<a href="" class="site-btn header-btn">Login</a>
+						<!-- <button class="site-btn" style="margin-inline-start: 20px">Login</button> -->
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Hero section end -->
+	<!-- Login section end -->
 
 
 	<!-- categories section -->
@@ -361,24 +359,26 @@
 
 
 	<!-- signup section -->
-	<section class="signup-section spad">
+	<section class="signup-section spad" id="signup">
 		<div class="signup-bg set-bg" data-setbg="img/signup-bg.jpg"></div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="signup-warp">
 						<div class="section-title text-white text-left">
-							<h2>Sign up to became a teacher</h2>
+							<h2>Sign up</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
 						</div>
 						<!-- signup form -->
 						<form class="signup-form">
 							<input type="text" placeholder="Your Name">
 							<input type="text" placeholder="Your E-mail">
-							<input type="text" placeholder="Your Phone">
-							<label for="v-upload" class="file-up-btn">Upload Course</label>
+							<input type="text" placeholder="Your Password">
+							<button class="site-btn" onclick="return validateData()">Sign up as teacher</button>
+                			<button class="site-btn" onclick="return validateData()">Sign up as student</button>
+							<!-- <label for="v-upload" class="file-up-btn">Upload Course</label>
 							<input type="file" id="v-upload">
-							<button class="site-btn">Search Couse</button>
+							<button class="site-btn">Search Couse</button> -->
 						</form>
 					</div>
 				</div>
@@ -388,89 +388,20 @@
 	<!-- signup section end -->
 
 
-	<!-- banner section -->
+	<!-- Feed-Back section -->
 	<section class="banner-section spad">
 		<div class="container">
 			<div class="section-title mb-0 pb-2">
-				<h2>Join Our Community Now!</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-			</div>
-			<div class="text-center pt-5">
-				<a href="#" class="site-btn">Register Now</a>
+				<h2>Have Any Feedback!</h2>
+				<p>Please Don't Hesitate to Inform Us.</p>
+				<p>M&M@gmail.com.</p>
 			</div>
 		</div>
 	</section>
 	<!-- banner section end -->
 
 
-	<!-- footer section -->
-	<footer class="footer-section spad pb-0">
-		<div class="footer-top">
-			<div class="footer-warp">
-				<div class="row">
-					<div class="widget-item">
-						<h4>Contact Info</h4>
-						<ul class="contact-list">
-							<li>1481 Creekside Lane <br>Avila Beach, CA 931</li>
-							<li>+53 345 7953 32453</li>
-							<li>yourmail@gmail.com</li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Engeneering</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Graphic Design</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Development</h4>
-						<ul>
-							<li><a href="">Applied Studies</a></li>
-							<li><a href="">Computer Engeneering</a></li>
-							<li><a href="">Software Engeneering</a></li>
-							<li><a href="">Informational Engeneering</a></li>
-							<li><a href="">System Engeneering</a></li>
-						</ul>
-					</div>
-					<div class="widget-item">
-						<h4>Newsletter</h4>
-						<form class="footer-newslatter">
-							<input type="email" placeholder="E-mail">
-							<button class="site-btn">Subscribe</button>
-							<p>*We don’t spam</p>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="footer-warp">
-				<ul class="footer-menu">
-					<li><a href="#">Terms & Conditions</a></li>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Privacy</a></li>
-				</ul>
-				<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-			</div>
-		</div>
-	</footer> 
-	<!-- footer section end -->
+	
 
 
 	<!--====== Javascripts & Jquery ======-->
@@ -480,4 +411,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
 </html>

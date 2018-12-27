@@ -10,9 +10,9 @@ function validateData()
         return false; 
     } 
     
-    if (password.value == "")                        
+    if (password.value == "" || password.length < 4 )                        
     { 
-        window.alert("Please enter your password"); 
+        window.alert("Please enter a password not less than 4 alphanumeric characters"); 
         password.focus(); 
         return false; 
     } 
