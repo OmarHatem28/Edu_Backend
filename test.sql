@@ -16,3 +16,12 @@ create table Course (
     UID int,
     FOREIGN KEY (UID) REFERENCES User(UID)
     );
+
+
+select * from course;
+
+INSERT INTO user (UID, name, email, password, isTeacher)
+VALUES (0, 'Omar', 'omar@gmail.com', 159357, true);
+
+INSERT INTO course (CID, name, category, duration, UID)
+VALUES (0, 'Django', 'BackEnd', 10, 1);
