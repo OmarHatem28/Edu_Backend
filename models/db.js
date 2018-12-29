@@ -7,12 +7,13 @@ function connectDatabase() {
             host: "localhost",
             user: "root",
             database: "educore"
-          });
+        });
 
         db.connect(function(err){
             if(!err) {
                 console.log('Connected to DataBase!');
             } else {
+                console.log(err);
                 console.log('Error connecting to database!');
             }
         });

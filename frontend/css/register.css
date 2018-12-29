@@ -3,20 +3,17 @@
 body {
     background-image: url("../img/bg.jpg");
 }
-
 .register-page {
     width: 500px;
     padding: 10% 0 0;
     margin: auto;
 }
-
 .form {
     background: #FFFFFF;
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
 }
-
 .form input {
     font-family: "Roboto", sans-serif;
     background: #f2f2f2;
@@ -27,7 +24,6 @@ body {
     box-sizing: border-box;
     font-size: 14px;
 }
-
 .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
@@ -38,14 +34,12 @@ body {
     color: #FFFFFF;
     font-size: 14px;
 }
-
 .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
     font-size: 12px;
     text-align: center;
 }
-
 .form .message a {
     color: #d82a4e;
     text-decoration: none;
