@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     var sql = "select * from course";
     db.query(sql, function (err, result) {
         if (err) throw err;
-        res.render('index.html', { results: result});
+        res.render('courses.html', { results: result});
         // res.send(result);
     });
 })

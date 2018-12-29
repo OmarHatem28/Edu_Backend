@@ -161,6 +161,19 @@ ol {
 
 /* buttons */
 
+.custom-button {
+	display: inline-block;
+	min-width: 196px;
+	text-align: center;
+	border: none;
+	padding: 15px 10px;
+	font-weight: 600;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+	background: #d82a4e;
+}
+
 .site-btn {
 	display: inline-block;
 	min-width: 196px;
