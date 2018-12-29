@@ -7,16 +7,16 @@
 	<meta name="keywords" content="EduCore, education, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="/img/favicon.ico" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/css/owl.carousel.css"/>
+	<link rel="stylesheet" href="/css/style.css"/>
 
 
 	<!--[if lt IE 9]>
@@ -31,13 +31,15 @@
 		<div class="loader"></div>
 	</div>
 
+	
+
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-3">
 					<div class="site-logo">
-						<img src="img/EduCore-white-outline.png" alt="">
+						<img src="/img/EduCore-white-outline.png" alt="">
 						<!-- <p style="color:#fff;">Free Online Courses</p> -->
 					</div>
 					<div class="nav-switch">
@@ -50,7 +52,7 @@
 						<ul>
 							<li><a href="http://localhost:3000">Home</a></li>
 							<li><a href="http://localhost:3000/courses">Courses</a></li>
-							<li style="margin-inline-start: 120px;"><a href="http://localhost:3000/myCourses">My Courses</a></li>
+							<li style="margin-inline-start: 120px;"><a href="http://localhost:3000/myCourses/1">My Courses</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -60,7 +62,7 @@
 	<!-- Header section end -->
 
 	<!-- Page info -->
-	<div class="page-info-section set-bg" data-setbg="img/page-bg/1.jpg">
+	<div class="page-info-section set-bg" data-setbg="/img/page-bg/1.jpg">
 		<div class="container">
 			<div class="site-breadcrumb">
 				<a href="index.html">Home</a>
@@ -71,33 +73,76 @@
 	<!-- Page info end -->
 
 
+	<!-- courses instructed section -->
+	<section class="course-section spad pb-0">
+			<div class="course-warp">
+				<h2>Courses Supervised</h2>
+				<br>
+				<!-- <ul class="course-filter controls">
+					<li class="control active" data-filter="all">All</li>
+					<li class="control" data-filter=".finance">Finance</li>
+					<li class="control" data-filter=".design">Design</li>
+					<li class="control" data-filter=".web">Web Development</li>
+					<li class="control" data-filter=".photo">Photography</li>
+				</ul> -->
+				<div class="row course-items-area">
+					<% instruct.forEach(function(course) { %>
+						<!-- course -->
+						<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
+							<div class="course-item">
+								<div class="course-thumb set-bg" data-setbg="/img/courses/1.jpg">
+									<div class="price">Price: $15</div>
+								</div>
+								<div class="course-info">
+									<div class="course-text">
+										<h5> <%= course.name %> </h5>
+										<p>Lorem ipsum dolor sit amet, consectetur</p>
+										<p>Course Duration: <%= course.duration %> hours</p>
+										<div class="students"><%= course.numReview %> Students</div>
+									</div>
+									<div class="course-author">
+										<div class="ca-pic set-bg" data-setbg="/img/authors/1.jpg"></div>
+										<p>William Parker, <span>Developer</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% }); %>
+				</div>
+			</div>
+		</section>
+		<!-- courses instructed section end -->
+
+
 	<!-- course section -->
 	<section class="course-section spad pb-0">
 		<div class="course-warp">
-			<ul class="course-filter controls">
+			<h2>Courses Viewed</h2>
+			<br>
+			<!-- <ul class="course-filter controls">
 				<li class="control active" data-filter="all">All</li>
 				<li class="control" data-filter=".finance">Finance</li>
 				<li class="control" data-filter=".design">Design</li>
 				<li class="control" data-filter=".web">Web Development</li>
 				<li class="control" data-filter=".photo">Photography</li>
-			</ul>                                       
+			</ul> -->
 			<div class="row course-items-area">
-				<% results.forEach(function(result) { %>
+				<% viewed.forEach(function(course) { %>
 					<!-- course -->
 					<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 						<div class="course-item">
-							<div class="course-thumb set-bg" data-setbg="img/courses/1.jpg">
+							<div class="course-thumb set-bg" data-setbg="/img/courses/1.jpg">
 								<div class="price">Price: $15</div>
 							</div>
 							<div class="course-info">
 								<div class="course-text">
-									<h5> <%= result.name %> </h5>
+									<h5> <%= course.name %> </h5>
 									<p>Lorem ipsum dolor sit amet, consectetur</p>
-									<p>Course Duration: <%= result.duration %> hours</p>
-									<div class="students"><%= result.numReview %> Students</div>
+									<p>Course Duration: <%= course.duration %> hours</p>
+									<div class="students"><%= course.numReview %> Students</div>
 								</div>
 								<div class="course-author">
-									<div class="ca-pic set-bg" data-setbg="img/authors/1.jpg"></div>
+									<div class="ca-pic set-bg" data-setbg="/img/authors/1.jpg"></div>
 									<p>William Parker, <span>Developer</span></p>
 								</div>
 							</div>
@@ -127,11 +172,11 @@
 
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/mixitup.min.js"></script>
+	<script src="/js/circle-progress.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 </html>

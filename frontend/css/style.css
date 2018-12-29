@@ -14,7 +14,7 @@ body {
 	height: 100%;
 	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	/* font-smoothing: antialiased; */
 }
 
 h1,
@@ -172,6 +172,10 @@ ol {
 	color: #fff;
 	cursor: pointer;
 	background: #d82a4e;
+}
+
+.custom-button:hover {
+	color: #fff;
 }
 
 .site-btn {

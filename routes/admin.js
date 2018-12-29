@@ -35,8 +35,4 @@ router.get('/deleteCourse/:CID', (req, res) => {
     });
 })
 
-router.get('/addCourse', (req, res) => {
-    res.render('addCourse.html');
-})
-
 module.exports = router;
