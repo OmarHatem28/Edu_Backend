@@ -6,9 +6,7 @@ function connectDatabase() {
         db = mysql.createConnection({
             host: "localhost",
             user: "root",
-            password: "159357",
-            database: "educore",
-            // insecureAuth : true
+            database: "educore"
           });
 
         db.connect(function(err){
