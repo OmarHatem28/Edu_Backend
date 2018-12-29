@@ -636,6 +636,7 @@ ol {
 }
 
 .signup-form input[type=text],
+.signup-form input[type=password],
 .signup-form input[type=email],
 .signup-form textarea,
 .contact-form input[type=text],

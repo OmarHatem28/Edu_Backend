@@ -1,42 +1,45 @@
 create database educore;
 -- ====================================================================================================
 create table User (
-	UID int,
+	UID int NOT NULL AUTO_INCREMENT,
     name varchar(255),
     email varchar(255),
     password varchar(255),
-    isTeacher boolean
-    );
--- ====================================================================================================
+    isTeacher boolean,
+    PRIMARY KEY (UID)
+);
 create table Course (
-	CID int,
+	CID int NOT NULL AUTO_INCREMENT,
     name varchar(255),
     category varchar(255),
     duration int,
+    numReview int,
+    totalRate int,
+    enrolled int,
     UID int,
+    PRIMARY KEY (CID),
     FOREIGN KEY (UID) REFERENCES User(UID)
-    );
--- ====================================================================================================
+);
 create table userCourse (
+    CUID INT  NOT NULL AUTO_INCREMENT,
     UID INT NOT NULL,
     CID INT NOT NULL,
-    CUID INT NOT NULL UNIQUE,
     PRIMARY KEY (CUID),
 	FOREIGN KEY (UID) REFERENCES User (UID),
 	FOREIGN KEY (CID) REFERENCES Course (CID)
 );
 -- ====================================================================================================
 -- add user
-INSERT INTO user (UID, name, email, password, isTeacher)
-VALUES (0, 'Bassem', 'bassem@gmail.com', 159357, false);
+INSERT INTO user (name, email, password, isTeacher)
+VALUES ('Bassem', 'bassem@gmail.com', 159357, false);
 -- ====================================================================================================
 -- add course
-INSERT INTO course (CID, name, category, duration, UID, numReview, totalRate, enrolled)
-VALUES (0, 'Android', 'Mobile Development', 20, 1, 0, 0, 0);
+INSERT INTO course (name, category, duration, UID, numReview, totalRate, enrolled)
+VALUES ('Android', 'Mobile Development', 20, 1, 0, 0, 0);
 -- ====================================================================================================
 -- enroll user in course
-INSERT INTO userCourse (CUID, UID, CID)
-VALUES ('23', 2, 3);
+INSERT INTO userCourse (UID, CID)
+VALUES (1, 1);
 -- ====================================================================================================
 select * from course;
 select * from user;

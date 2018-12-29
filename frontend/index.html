@@ -215,12 +215,17 @@
 							<h2 id="signup">Sign up</h2>
 						</div>
 						<!-- signup form -->
-						<form class="signup-form">
-							<input type="text" placeholder="Your Name">
-							<input type="text" placeholder="Your E-mail">
-							<input type="text" placeholder="Your Password">
-							<button class="site-btn" onclick="return validateData()">Sign up as teacher</button>
-                			<button class="site-btn" onclick="return validateData()">Sign up as student</button>
+						<form method="post" action="/user/register" class="signup-form">
+							<input type="text" id="userName" name="userName" placeholder="Your Name">
+							<input type="text" id="email" name="email" placeholder="Your E-mail">
+							<input type="password" id="password" name="password" placeholder="Your Password">
+							<input type="checkbox" id="isTeacher" name="isTeacher" hidden>
+							<button type="submit" class="site-btn" onclick="return validateData(true)">
+								Sign up as teacher
+							</button>
+                			<button type="submit" class="site-btn" onclick="return validateData(false)">
+								Sign up as student
+							</button>
 							<!-- <label for="v-upload" class="file-up-btn">Upload Course</label>
 							<input type="file" id="v-upload">
 							<button class="site-btn">Search Couse</button> -->
@@ -253,4 +258,5 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript" src="js/register.js"></script>
+</body>
 </html>
