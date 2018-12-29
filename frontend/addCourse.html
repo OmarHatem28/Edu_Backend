@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/addCourse.css">
-    <script type="text/javascript" src="js/addCourse.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/addCourse.css">
+    <script type="text/javascript" src="../js/addCourse.js"></script>
 </head>
 <body>
 <div class="addCourse-page">
     <form class="form">
-        <input id="courseName" type="text" placeholder="Course Name"/>
-        <input id="category" type="text" placeholder="Category"/>
-        <input id="duration" type="text" placeholder="Duration"/>
+        <input id="name" name="name" type="text" placeholder="Course Name"/>
+        <input id="category" name="category" type="text" placeholder="Category"/>
+        <input id="duration" name="duration" type="text" placeholder="Duration"/>
+        <input id="description" name="description" type="text" placeholder="Description Field"/>
+        <input id="playlist" name="playlist" type="text" placeholder="Playlist Link"/>
+        <label for="v-upload" class="file-up-btn">Upload Image</label>
+        <input id="image" name="image" type="file" id="v-upload">
         <button onclick="return validateData()">ADD</button>
     </form>
 </div>

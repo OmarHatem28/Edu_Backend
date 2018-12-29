@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var user = require('./user.js')
+var user = require('./user.js');
 
 router.post('/register', (req, res) => {
     var queryDoneSuccess = function (result) {

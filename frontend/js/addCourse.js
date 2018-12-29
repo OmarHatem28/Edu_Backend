@@ -1,35 +1,20 @@
-function validateData()
-{
-    var name = document.getElementById("userName");
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
+function validateData() {
+    var name = document.getElementById("name");
+    var category = document.getElementById("category");
+    var duration = document.getElementById("duration");
+    var description = document.getElementById("description");
+    var playlist = document.getElementById("playlist");
+    var courseImg = document.getElementById("image");
 
-    if (name.value == "")
-    {
-        window.alert("Please enter your name.");
-        name.focus();
-        return false;
+    var elements = [name, category, duration, description, playlist, courseImg];
+
+    for (var i = 0; i < elements.length; ++i) {
+        if (elements[i].value == "") {
+            window.alert("Please enter course " + elements[i].id + ".");
+            elements[i].focus();
+            return false;
+        }
     }
-
-    if (email.value == "" || (email.value.match(/@/g) || []).length != 1 || (email.value.match(/\./g) || []).length != 1)
-    {
-        window.alert("Please enter a valid e-mail address.");
-        email.focus();
-        return false;
-    }
-
-    if (password.value == "")
-    {
-        window.alert("Please enter your password");
-        password.focus();
-        return false;
-    }
-
-    var newUser = {
-        "name": name.value,
-        "email": email.value,
-        "password": password.value
-    };
 
     return true;
 }
