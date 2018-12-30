@@ -10,7 +10,8 @@ router.post('/register', (req, res) => {
         var sql = "select * from course";
         db.query(sql, function (err, courses) {
             if (err) throw err;
-            res.render('index.html', { results: courses} );
+            res.redirect('/');
+            // res.render('index.html', { results: courses} );
             // res.send(courses);
         });
     };
