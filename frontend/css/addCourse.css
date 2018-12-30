@@ -28,6 +28,12 @@ body {
     font-size: 14px;
 }
 
+.form label {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding: 0 15px;
+}
+
 .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
