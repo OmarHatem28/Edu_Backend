@@ -13,10 +13,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/owl.carousel.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/style.css"/>
 
 
 	<!--[if lt IE 9]>
@@ -47,10 +47,10 @@
 					<a href="#signup" class="site-btn header-btn">Sign Up</a>
 					<nav class="main-menu">
 						<ul>
-							<li><a href="http://localhost:3000">Home</a></li>
-							<li><a href="http://localhost:3000/courses">Courses</a></li>
-							<li><a href="http://localhost:3000/myCourses/1">My Courses</a></li><!-- replace 1 with session.get user.isTeacher-->
-							<li><a href="http://localhost:3000/instructors">Instructors</a></li>
+							<li><a href="/">Home</a></li>
+							<li><a href="/courses">Courses</a></li>
+							<li><a href="/myCourses/1">My Courses</a></li><!-- replace 1 with session.get user.isTeacher-->
+							<li><a href="/instructors">Instructors</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -61,17 +61,25 @@
 
 
 	<!-- Login section -->
-	<section class="hero-section set-bg" data-setbg="img/bg.jpg">
+	<section class="hero-section set-bg" data-setbg="/img/bg.jpg">
 		<div class="container">
 			<div class="hero-text text-white">
 				<h2>Get The Best Free Online Courses</h2>
 			</div>
-			<div class="row">
+			<script>
+				if ( sessionStorage.email ){
+					document.getElementById("loginDiv").style.visibility = false;
+				}
+			</script>
+			<div class="row" id="loginDiv">
 				<div class="col-lg-10 offset-lg-1">
-					<form class="intro-newslatter">
-						<input type="text" placeholder="E-mail">
-						<input type="password" style="width: 300px; height: 55px; padding-inline-start: 20px" placeholder="Password">
-						<a href="" class="site-btn header-btn">Login</a>
+					<form method="post" action="/user/login" class="intro-newslatter">
+						<input type="text" name="email" placeholder="E-mail">
+						<input type="password" name="password" style="width: 300px; height: 55px; padding-inline-start: 20px" placeholder="Password">
+						<button type="submit" class="site-btn" style="margin-inline-start: 20px">
+								Login
+						</button>
+						<!-- <a href="/user/login" class="site-btn header-btn" type="submit">Login</a> -->
 						<!-- <button class="site-btn" style="margin-inline-start: 20px">Login</button> -->
 					</form>
 				</div>
@@ -181,7 +189,7 @@
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 					<div class="course-item">
-						<div class="course-thumb set-bg" data-setbg="img/courses/1.jpg">
+						<div class="course-thumb set-bg" data-setbg="/img/courses/1.jpg">
 							<div class="price">Price: $15</div>
 						</div>
 						<div class="course-info">
@@ -252,11 +260,11 @@
 	<!-- banner section end -->
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
-	<script type="text/javascript" src="js/register.js"></script>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/mixitup.min.js"></script>
+	<script src="/js/circle-progress.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script type="text/javascript" src="/js/register.js"></script>
 </html>

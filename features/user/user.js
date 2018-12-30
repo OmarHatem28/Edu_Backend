@@ -26,6 +26,18 @@ let methods = {
                 userNotExists();
             }
         });
+    },
+
+    chechUser: function ( user, callBackSuccess, callBackFail) {
+        let selectSql = "SELECT * FROM User WHERE email = '"+user.email+"'";
+        con.query(selectSql, function (err, result) {
+            if (err) throw err;
+            if (result !== undefined && result.length > 0 && result[0].password == user.password ) {
+                callBackSuccess(result);
+            } else {
+                callBackFail('User Not Registered.');
+            }
+        });
     }
 };
 
