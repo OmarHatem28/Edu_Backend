@@ -39,7 +39,7 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-3">
 					<div class="site-logo">
-						<img src="img/EduCore-white-outline.png" alt="">
+						<img src="/img/EduCore-white-outline.png" alt="">
 						<!-- <p style="color:#fff;">Free Online Courses</p> -->
 					</div>
 					<div class="nav-switch">
@@ -47,7 +47,11 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="" class="site-btn header-btn">Login</a>
+						<% if ( info === "" ) { %>
+							<a href="/" class="site-btn header-btn">Login</a>
+						<% } else { %>
+							<p class="site-btn header-btn">Welcome <%= info.name %></p>
+						<% } %>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="/">Home</a></li>
@@ -69,6 +73,8 @@
 				<a href="/">Home</a>
 				<span>My Courses</span>
 			</div>
+			<h3 style="-webkit-text-fill-color: #d82a4e; margin-top: 50px">Instructor: <%= profile.name %></h3>
+			<h4 style="-webkit-text-fill-color: #d82a4e; margin-top: 20px">Email: <%= profile.email %></h4>
 		</div>
 	</div>
 	<!-- Page info end -->
@@ -92,18 +98,14 @@
 						<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 							<div class="course-item">
 								<div class="course-thumb set-bg" data-setbg="/img/courses/1.jpg">
-									<div class="price">Price: $15</div>
+									<div class="price"><a href="http://localhost:3000/myCourses/enroll/<%= result.CID %>">View</a></div>
 								</div>
 								<div class="course-info">
 									<div class="course-text">
 										<h5> <%= result.name %> </h5>
-										<p>Lorem ipsum dolor sit amet, consectetur</p>
+										<p><%= result.description %></p>
 										<p>Course Duration: <%= result.duration %> hours</p>
 										<div class="students"><%= result.numReview %> Students</div>
-									</div>
-									<div class="course-author">
-										<div class="ca-pic set-bg" data-setbg="/img/authors/1.jpg"></div>
-										<p>William Parker, <span>Developer</span></p>
 									</div>
 								</div>
 							</div>

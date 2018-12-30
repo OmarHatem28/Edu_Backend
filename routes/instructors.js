@@ -20,8 +20,16 @@ router.get('/profile/:UID', (req, res) => {
     var sql = "select * from course where UID = '"+req.params.UID+"'";
     db.query(sql, function (err, result) {
         if (err) throw err;
-        res.render('instructorProfile.html', { results: result});
-        // res.send(result);
+        var sql2 = "select * from user where UID = '"+req.params.UID+"'";
+        db.query(sql2, function (err, result2) {
+            if (err) throw err;
+            console.log(result2);
+            if ( global.myCookie )
+                res.render('instructorProfile.html', { results: result, profile: result2[0], info: JSON.parse(global.myCookie.toString())});
+            else
+                res.render('instructorProfile.html', { results: result, profile: result2[0], info: ""});
+            // res.send(result);
+        });
     });
 })
 

@@ -45,7 +45,11 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<p class="site-btn header-btn">Welcome <%= info.name %></p>
+						<% if ( info === "" ) { %>
+							<a href="/" class="site-btn header-btn">Login</a>
+						<% } else { %>
+							<p class="site-btn header-btn">Welcome <%= info.name %></p>
+						<% } %>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="/">Home</a></li>
