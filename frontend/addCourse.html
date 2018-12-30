@@ -6,15 +6,15 @@
 </head>
 <body>
 <div class="addCourse-page">
-    <form class="form">
+    <form method="post" action="/courses/addCourse" class="form">
         <input id="name" name="name" type="text" placeholder="Course Name"/>
         <input id="category" name="category" type="text" placeholder="Category"/>
         <input id="duration" name="duration" type="text" placeholder="Duration"/>
         <input id="description" name="description" type="text" placeholder="Description Field"/>
         <input id="playlist" name="playlist" type="text" placeholder="Playlist Link"/>
-        <label for="v-upload" class="file-up-btn">Upload Image</label>
-        <input id="image" name="image" type="file" id="v-upload">
-        <button onclick="return validateData()">ADD</button>
+        <label for="image" class="file-up-btn">Upload Image</label>
+        <input id="image" name="image" type="file">
+        <button type="submit" onclick="return validateData()">ADD</button>
     </form>
 </div>
 </body>
