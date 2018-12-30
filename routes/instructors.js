@@ -16,5 +16,13 @@ router.get('/', (req, res) => {
     });
 })
 
+router.get('/profile/:UID', (req, res) => {
+    var sql = "select * from course where UID = '"+req.params.UID+"'";
+    db.query(sql, function (err, result) {
+        if (err) throw err;
+        res.render('instructorProfile.html', { results: result});
+        // res.send(result);
+    });
+})
 
 module.exports = router;
