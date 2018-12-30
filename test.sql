@@ -10,13 +10,16 @@ create table User (
 );
 create table Course (
 	CID int NOT NULL AUTO_INCREMENT,
-    name varchar(255),
-    category varchar(255),
-    duration int,
-    numReview int,
-    totalRate int,
-    enrolled int,
-    UID int,
+    name varchar(255) NOT NULL,
+    category varchar(255) NOT NULL,
+    duration int NOT NULL,
+    UID int NOT NULL,
+    numReview int NOT NULL DEFAULT 0,
+    totalRate int NOT NULL DEFAULT 0,
+    enrolled int NOT NULL DEFAULT 0,
+    playlist varchar(255) NOT NULL,
+    description text NOT NULL,
+    courseImg blob,
     PRIMARY KEY (CID),
     FOREIGN KEY (UID) REFERENCES User(UID)
 );
