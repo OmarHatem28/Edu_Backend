@@ -3,6 +3,7 @@ const home = require('./routes/home');
 const myCourses = require('./routes/myCourses');
 const admin = require('./routes/admin');
 const user = require('./features/user/index.js');
+const instructors = require('./routes/instructors');
 const express = require('express');
 const app = express();
 
@@ -15,6 +16,7 @@ app.use('/courses',courses);
 app.use('/myCourses',myCourses);
 app.use('/admin',admin);
 app.use('/user', user);
+app.use('/instructors', instructors);
 
 app.set('views', __dirname + '/frontend');
 app.use(express.static('frontend'));
