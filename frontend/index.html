@@ -44,12 +44,16 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="#signup" class="site-btn header-btn">Sign Up</a>
+					<% if ( info === "" ) { %>
+						<a href="#signup" class="site-btn header-btn">Sign Up</a>
+					<% } else { %>
+						<p class="site-btn header-btn">Welcome <%= info.name %></p>
+					<% } %>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="/">Home</a></li>
 							<li><a href="/courses">Courses</a></li>
-							<li><a href="/myCourses/1">My Courses</a></li><!-- replace 1 with session.get user.isTeacher-->
+							<li><a href="/myCourses">My Courses</a></li>
 							<li><a href="/instructors">Instructors</a></li>
 						</ul>
 					</nav>
@@ -66,11 +70,7 @@
 			<div class="hero-text text-white">
 				<h2>Get The Best Free Online Courses</h2>
 			</div>
-			<script>
-				if ( sessionStorage.email ){
-					document.getElementById("loginDiv").style.visibility = false;
-				}
-			</script>
+			<% if ( info === "" ) { %>
 			<div class="row" id="loginDiv">
 				<div class="col-lg-10 offset-lg-1">
 					<form method="post" action="/user/login" class="intro-newslatter">
@@ -84,6 +84,7 @@
 					</form>
 				</div>
 			</div>
+			<% } %>
 		</div>
 	</section>
 	<!-- Login section end -->
@@ -94,75 +95,20 @@
 		<div class="container">
 			<div class="section-title">
 				<h2>Our Course Categories</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
 			</div>
 			<div class="row">
-				<!-- categorie -->
-				<div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="/img/categories/1.jpg"></div>
-						<div class="ci-text">
-							<h5>IT Development</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>120 Courses</span>
-						</div>
-					</div>
-				</div>
-				<!-- categorie -->
-				<div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="/img/categories/2.jpg"></div>
-						<div class="ci-text">
-							<h5>Web Design</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>70 Courses</span>
-						</div>
-					</div>
-				</div>
-				<!-- categorie -->
-				<div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="/img/categories/3.jpg"></div>
-						<div class="ci-text">
-							<h5>Illustration & Drawing</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>55 Courses</span>
-						</div>
-					</div>
-				</div>
-				<!-- categorie -->
-				<div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="/img/categories/4.jpg"></div>
-						<div class="ci-text">
-							<h5>Social Media</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>40 Courses</span>
-						</div>
-					</div>
-				</div>
-				<!-- categorie -->
-				<div class="col-lg-4 col-md-6">
-					<div class="categorie-item">
-						<div class="ci-thumb set-bg" data-setbg="/img/categories/5.jpg"></div>
-						<div class="ci-text">
-							<h5>Photoshop</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>220 Courses</span>
-						</div>
-					</div>
-				</div>
+				<% categories.forEach(function(category) { %>
 				<!-- categorie -->
 				<div class="col-lg-4 col-md-6">
 					<div class="categorie-item">
 						<div class="ci-thumb set-bg" data-setbg="/img/categories/6.jpg"></div>
 						<div class="ci-text">
-							<h5>Cryptocurrencies</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur</p>
-							<span>25 Courses</span>
+							<h5><%= category %></h5>
+							<!-- <span>120 Courses</span> -->
 						</div>
 					</div>
 				</div>
+				<% }); %>
 			</div>
 		</div>
 	</section>
@@ -173,35 +119,30 @@
 		<div class="container">
 			<div class="section-title mb-0">
 				<h2>Featured Courses</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
 			</div>
 		</div>
 		<div class="course-warp">
-			<ul class="course-filter controls">
+			<!-- <ul class="course-filter controls">
 				<li class="control active" data-filter="all">All</li>
 				<li class="control" data-filter=".finance">Finance</li>
 				<li class="control" data-filter=".design">Design</li>
 				<li class="control" data-filter=".web">Web Development</li>
 				<li class="control" data-filter=".photo">Photography</li>
-			</ul>                                       
+			</ul>-->
 			<div class="row course-items-area">
 				<% results.forEach(function(result) { %>
 				<!-- course -->
 				<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 					<div class="course-item">
 						<div class="course-thumb set-bg" data-setbg="/img/courses/1.jpg">
-							<div class="price">Price: $15</div>
+							<div class="price"><a href="http://localhost:3000/myCourses/enroll/<%= result.CID %>">View</a></div>
 						</div>
 						<div class="course-info">
 							<div class="course-text">
 								<h5> <%= result.name %> </h5>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
+								<p><%= result.description %></p>
 								<p>Course Duration: <%= result.duration %> hours</p>
-								<div class="students"><%= result.numReview %> Students</div>
-							</div>
-							<div class="course-author">
-								<div class="ca-pic set-bg" data-setbg="/img/authors/1.jpg"></div>
-								<p>William Parker, <span>Developer</span></p>
+								<div class="students"><%= result.enrolled %> Students</div>
 							</div>
 						</div>
 					</div>
@@ -212,39 +153,40 @@
 	</section>
 	<!-- course section end -->
 
-
-	<!-- signup section -->
-	<section class="signup-section spad">
-		<div class="signup-bg set-bg" data-setbg="img/signup-bg.jpg"></div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="signup-warp">
-						<div class="section-title text-white text-left">
-							<h2 id="signup">Sign up</h2>
+	<% if ( info === "" ) { %>
+		<!-- signup section -->
+		<section class="signup-section spad">
+			<div class="signup-bg set-bg" data-setbg="/img/signup-bg.jpg"></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="signup-warp">
+							<div class="section-title text-white text-left">
+								<h2 id="signup">Sign up</h2>
+							</div>
+							<!-- signup form -->
+							<form method="post" action="/user/register" class="signup-form">
+								<input type="text" id="userName" name="userName" placeholder="Your Name">
+								<input type="text" id="email" name="email" placeholder="Your E-mail">
+								<input type="password" id="password" name="password" placeholder="Your Password">
+								<input type="checkbox" id="isTeacher" name="isTeacher" hidden>
+								<button type="submit" class="site-btn" onclick="return validateData(true)">
+									Sign up as teacher
+								</button>
+								<button type="submit" class="site-btn" onclick="return validateData(false)">
+									Sign up as student
+								</button>
+								<!-- <label for="v-upload" class="file-up-btn">Upload Course</label>
+								<input type="file" id="v-upload">
+								<button class="site-btn">Search Couse</button> -->
+							</form>
 						</div>
-						<!-- signup form -->
-						<form method="post" action="/user/register" class="signup-form">
-							<input type="text" id="userName" name="userName" placeholder="Your Name">
-							<input type="text" id="email" name="email" placeholder="Your E-mail">
-							<input type="password" id="password" name="password" placeholder="Your Password">
-							<input type="checkbox" id="isTeacher" name="isTeacher" hidden>
-							<button type="submit" class="site-btn" onclick="return validateData(true)">
-								Sign up as teacher
-							</button>
-                			<button type="submit" class="site-btn" onclick="return validateData(false)">
-								Sign up as student
-							</button>
-							<!-- <label for="v-upload" class="file-up-btn">Upload Course</label>
-							<input type="file" id="v-upload">
-							<button class="site-btn">Search Couse</button> -->
-						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- signup section end -->
+		</section>
+		<!-- signup section end -->
+	<% } %>
 
 
 	<!-- Feed-Back section -->

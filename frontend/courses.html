@@ -45,12 +45,16 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="" class="site-btn header-btn">Login</a>
+						<% if ( info === "" ) { %>
+							<a href="/" class="site-btn header-btn">Login</a>
+						<% } else { %>
+							<p class="site-btn header-btn">Welcome <%= info.name %></p>
+						<% } %>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="/">Home</a></li>
 							<li><a href="/courses">Courses</a></li>
-							<li><a href="/myCourses/1">My Courses</a></li><!-- replace 1 with session.get user.isTeacher-->
+							<li><a href="/myCourses">My Courses</a></li>
 							<li><a href="/instructors">Instructors</a></li>
 						</ul>
 					</nav>
@@ -99,38 +103,34 @@
 	<!-- course section -->
 	<section class="course-section spad pb-0">
 		<div class="course-warp">
-			<ul class="course-filter controls">
+			<!-- <ul class="course-filter controls">
 				<li class="control active" data-filter="all">All</li>
 				<li class="control" data-filter=".finance">Finance</li>
 				<li class="control" data-filter=".design">Design</li>
 				<li class="control" data-filter=".web">Web Development</li>
 				<li class="control" data-filter=".photo">Photography</li>
-			</ul>                                       
+			</ul>                                        -->
 			<div class="row course-items-area">
 				<% results.forEach(function(result) { %>
 					<!-- course -->
 					<div class="mix col-lg-3 col-md-4 col-sm-6 finance">
 						<div class="course-item">
 							<div class="course-thumb set-bg" data-setbg="img/courses/1.jpg">
-								<div class="price">Price: $15</div>
+								<div class="price"><a href="http://localhost:3000/myCourses/enroll/<%= result.CID %>">View</a></div>
 							</div>
 							<div class="course-info">
 								<div class="course-text">
 									<h5> <%= result.name %> </h5>
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p><%= result.description %></p>
 									<p>Course Duration: <%= result.duration %> hours</p>
 									<div class="students"><%= result.numReview %> Students</div>
-								</div>
-								<div class="course-author">
-									<div class="ca-pic set-bg" data-setbg="/img/authors/1.jpg"></div>
-									<p>William Parker, <span>Developer</span></p>
 								</div>
 							</div>
 						</div>
 					</div>
 				<% }); %>
 			</div>
-			<div class="featured-courses">
+			<!-- <div class="featured-courses">
 				<div class="featured-course course-item">
 					<div class="course-thumb set-bg" data-setbg="img/courses/f-1.jpg">
 						<div class="price">Price: $15</div>
@@ -172,7 +172,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>

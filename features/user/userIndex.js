@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 var user = require('./user.js');
 let db = require('../../models/db.js');
+var cookie = require('cookie');
 
 
 router.post('/register', (req, res) => {
@@ -30,7 +31,14 @@ router.post('/login', (req, res) => {
         var sql = "select * from course";
         db.query(sql, function (err, courses) {
             if (err) throw err;
-            res.render('index.html', { results: courses} );
+            res.setHeader('Set-Cookie', cookie.serialize('myCookie', JSON.stringify({name: result[0].name, UID: result[0].UID, email: result[0].email, isTeacher: result[0].isTeacher}) , {
+                httpOnly: true,
+                maxAge: 60 * 60 // 1 hour
+            }));
+            var cookies = cookie.parse(req.headers.cookie || '');
+            global.myCookie = cookies.myCookie;
+            // console.log(JSON.parse(myCookie.toString()).email);
+            res.redirect("http://localhost:3000");
             // res.send(courses);
         });
     };
@@ -38,7 +46,7 @@ router.post('/login', (req, res) => {
         var sql = "select * from course";
         db.query(sql, function (err, courses) {
             if (err) throw err;
-            res.render('index.html', { results: courses} );
+            res.redirect("http://localhost:3000");
             // res.send(courses);
         });
         console.log(errMessage);

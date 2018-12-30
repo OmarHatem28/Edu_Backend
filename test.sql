@@ -41,8 +41,8 @@ INSERT INTO course (name, category, duration, UID, numReview, totalRate, enrolle
 VALUES ('Android', 'Mobile Development', 20, 1, 0, 0, 0);
 -- ====================================================================================================
 -- enroll user in course
-INSERT INTO userCourse (UID, CID)
-VALUES (1, 1);
+INSERT INTO userCourse (CUID, UID, CID)
+VALUES ('23', 2, 3);
 -- ====================================================================================================
 select * from course;
 select * from user;

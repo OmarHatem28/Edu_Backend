@@ -45,12 +45,12 @@
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9">
-					<a href="" class="site-btn header-btn">Login</a>
+					<p class="site-btn header-btn">Welcome <%= info.name %></p>
 					<nav class="main-menu">
 						<ul>
 							<li><a href="/">Home</a></li>
 							<li><a href="/courses">Courses</a></li>
-							<li><a href="/myCourses/1">My Courses</a></li><!-- replace 1 with session.get user.isTeacher-->
+							<li><a href="/myCourses">My Courses</a></li><!-- replace 1 with session.get user.isTeacher-->
 							<li><a href="/instructors">Instructors</a></li>
 						</ul>
 					</nav>
@@ -93,7 +93,7 @@
 						<div class="card-body">
 							<h4 class="card-title"><%= result.name %></h4>
 							<p class="card-text"><%= result.email %></p>
-							<a href="#" class="btn btn-primary">See Profile</a>
+							<a href="" class="btn btn-primary">See Profile</a>
 						</div>
 					</div>
 				<% }); %>
