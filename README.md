@@ -1,5 +1,5 @@
 # Educore
-##Free Educational Website. Database Used: MySQL, Backend: Node JS
+## Free Educational Website. Database Used: MySQL, Backend: Node JS
 
 ![alt text](https://github.com/OmarHatem28/Educore/blob/master/project_SS/Home.PNG)
 
